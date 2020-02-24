@@ -1,7 +1,10 @@
 # First line of this new README file
 ## 2020-02-24 Git basics
-- `init`    :make current folder a git repository
+
+- `init`    : make current folder a git repository
 - `status`  : see the status of the current repository.
+- `add`     : put file into the index ( staging area )
+- `commit`  : commit the files from staging area
 
 ```
 Changes to be committed:
@@ -23,5 +26,5 @@ Changes to be committed:
         new file:   admin/logging/cronjob-kibana-index-backups/script/kibana_index_backups.sh
 ```
 
--- pul sis autmatically doing a fetch and a merge
-a fetch is only showin gthe differences
+-- `pull` : is autmatically doing a fetch and a merge
+            a fetch is only showin gthe differences

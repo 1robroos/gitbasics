@@ -5,6 +5,8 @@
 - `status`  : see the status of the current repository.
 - `add`     : put file into the index ( staging area )
 - `commit`  : commit the files from staging area
+- `commit -m '" `: commit message directly
+
 
 ```
 Changes to be committed:

@@ -13,9 +13,16 @@
 - `restore`: get lat known  state back if you aded something to your file ( without git add ( or git commit ))
             "   (use "git restore <file>..." to discard changes in working directory)"
             this was same as `git checkout HEAD README.md`
+show filenames:     `git log --oneline --all --graph --decorate --stat` or `git log --name-status` or `git log --name-only`
+
+- `git add . ` : add everyhting starging fromthis directory.
+- `git add --all` : add everything.
+
 
 dus `git checkout HEAD test` is hetzelfde als ` git restore test `
 de file is nog nit staged of commited.
+
+git log --oneline --all --graph --decorate : usefull for when worign with remotes.
 
 
 
@@ -24,7 +31,11 @@ als tie al gestaged was dan:
  git restore --staged test
  git restore test
 ```
+dit kan dus ook met `git checkout 1ac3024 test`
 
+
+met `git checkout 1ac3024 test` ga je terug in de tijd,
+daarna kan je weer terug met git checkout HEAD README.md
 
 ```
 Changes to be committed:
@@ -73,3 +84,11 @@ Changes to be committed:
 
 
 
+
+play with older versions of file test:
+```
+  git log test
+   git checkout bb957d3b9740e9ba09ae97dbcf4038e71daa0110  test
+   git log test
+   git checkout b3b2190837587baec91d708d43c780c322455aa4 test
+ ``

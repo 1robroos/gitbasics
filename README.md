@@ -82,7 +82,7 @@ play with older versions of file test:
  ``
 
 
-
+## add a remote
 $ git remote add origin git@github.com:1robroos/gitbasics.git
 (base) [rob@rob-Latitude-5590 gitbasics (⎈ |rroos@ekstest2.us-west-2.eksctl.io:kubernetes-dashboard)]$ git remote -v
 origin  git@github.com:1robroos/gitbasics.git (fetch)

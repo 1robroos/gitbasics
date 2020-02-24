@@ -22,3 +22,6 @@ Changes to be committed:
         new file:   admin/logging/cronjob-kibana-index-backups/deployment-cronjob.yml
         new file:   admin/logging/cronjob-kibana-index-backups/script/kibana_index_backups.sh
 ```
+
+-- pul sis autmatically doing a fetch and a merge
+a fetch is only showin gthe differences

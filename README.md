@@ -1,28 +1,32 @@
-# First line of this new README file
 ## 2020-02-24 Git basics
 
-- `init`    : make current folder a git repository
-- `status`  : see the status of the current repository.
-- `add`     : put file into the index ( staging area )
-- `commit`  : commit the files from staging area
-- `commit -m '"" `: commit message directly
-- ` diff`   : show difs:    `git diff` : show diffs with current file and commited file before . this is for a file not yed in the staging area
+- `init`                : make current folder a git repository
+- `status`              : see the status of the current repository.
+- `add`                 : put file into the index ( staging area )
+- `commit`              : commit the files from staging area
+- `commit -m '"" `      : commit message directly
+- ` diff`               : show difs:    `git diff` : show diffs with current file and commited file before . this is for a file not yed in the staging area
                             `git HEAD~1 README.md ` or `git diff bb957d3b9740e9ba09ae97dbcf4038e71daa0110 README.md`
-- `git log --oneline` : shows commits on one line per commit.
-- `git diff --staged` : show differences with commit and staging area
-- `restore`: get lat known  state back if you aded something to your file ( without git add ( or git commit ))
-            "   (use "git restore <file>..." to discard changes in working directory)"
-            this was same as `git checkout HEAD README.md`
-show filenames:     `git log --oneline --all --graph --decorate --stat` or `git log --name-status` or `git log --name-only`
-
-- `git add . ` : add everyhting starging fromthis directory.
-- `git add --all` : add everything.
+- `git log --oneline`   : shows commits on one line per commit.
+- `git diff --staged`   : show differences with commit and staging area
+- `restore`             : get lat known  state back if you aded something to your file ( without git add ( or git commit ))
+                        "   (use "git restore <file>..." to discard changes in working directory)"
+                        this was same as `git checkout HEAD README.md`
+- `git log --oneline --all --graph --decorate --stat` or 
+- `git log --name-status` or 
+- `git log --name-only` : show filenames
+- `git add . `          : add everyhting starging fromthis directory.
+- `git add --all`       : add everything.
+- ` rebase`             : merge commits to let it look like it is one commit.
 
 
 dus `git checkout HEAD test` is hetzelfde als ` git restore test `
 de file is nog nit staged of commited.
 
-git log --oneline --all --graph --decorate : usefull for when worign with remotes.
+git log --oneline --all --graph --decorate : usefull for when working with remotes.
+
+- `checkout hash`       : restore entire folder to that point of time.
+- `checkout hash file`  : restore file to that point of time.
 
 
 

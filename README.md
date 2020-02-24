@@ -1,4 +1,4 @@
-## 2020-02-24 Git basics
+# 2020-02-24 Git basics
 
 - `init`                : make current folder a git repository
 - `status`              : see the status of the current repository.
@@ -12,35 +12,32 @@
 - `restore`             : get lat known  state back if you aded something to your file ( without git add ( or git commit ))
                         "   (use "git restore <file>..." to discard changes in working directory)"
                         this was same as `git checkout HEAD README.md`
+                        So `git checkout HEAD test` is same as ` git restore test ` ( file not staged or commited)
 - `git log --oneline --all --graph --decorate --stat` or 
 - `git log --name-status` or 
 - `git log --name-only` : show filenames
 - `git add . `          : add everyhting starging fromthis directory.
 - `git add --all`       : add everything.
 - ` rebase`             : merge commits to let it look like it is one commit.
-
-
-dus `git checkout HEAD test` is hetzelfde als ` git restore test `
-de file is nog nit staged of commited.
-
-git log --oneline --all --graph --decorate : usefull for when working with remotes.
-
+- `git log --oneline --all --graph --decorate` : usefull for when working with remotes.
 - `checkout hash`       : restore entire folder to that point of time.
 - `checkout hash file`  : restore file to that point of time.
+- `pull`                : is autmatically doing a fetch and a merge
+- `fetch`               :  a fetch is only showing the differences
 
 
 
-als tie al gestaged was dan:
+When file is already staged:
 ```
  git restore --staged test
  git restore test
 ```
-dit kan dus ook met `git checkout 1ac3024 test`
+So also possible with something like `git checkout 1ac3024 test` 
+with `git checkout 1ac3024 test` you'll go back in time ( and try some stuff )
+You can come back to the current tim ewith `git checkout HEAD README.md`
 
 
-met `git checkout 1ac3024 test` ga je terug in de tijd,
-daarna kan je weer terug met git checkout HEAD README.md
-
+difference : `rm --cached` and `git reset head` 
 ```
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
@@ -48,28 +45,24 @@ Changes to be committed:
         new file:   README.md
 ```
 
-versus
+versus some other repo names "k8s":
 
 ```
 Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)   --> update: dit was de oude message )
+  (use "git reset HEAD <file>..." to unstage)   --> update: this was with older git versions)
 
         new file:   admin/logging/cronjob-kibana-index-backups/Dockerfile
-        new file:   admin/logging/cronjob-kibana-index-backups/Makefile
-        new file:   admin/logging/cronjob-kibana-index-backups/deployment-cronjob-kibana-backups-all-in-one.yml
-        new file:   admin/logging/cronjob-kibana-index-backups/deployment-cronjob.yml
-        new file:   admin/logging/cronjob-kibana-index-backups/script/kibana_index_backups.sh
+        new file:   admin/logging/cronjob-kibana-index-backups/Makefileh
 ```
-this is solved wth upgrading git:
+this is solved with upgrading git:
         ```
-
-        2052  sudo add-apt-repository -y ppa:git-core/ppa
-        2053  sudo apt-get update
-        2054  sudo apt-get install git -y
+          sudo add-apt-repository -y ppa:git-core/ppa
+          sudo apt-get update
+          sudo apt-get install git -y
+        ```
+Now the output on repo "k8s" status is:
 ```
-Now the output on rm-kubernetes git status is:
-```
- gs
+git status
 On branch develop
 Your branch is up to date with 'origin/develop'.
 
@@ -77,16 +70,7 @@ Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         new file:   admin/logging/cronjob-kibana-index-backups/Dockerfile
         new file:   admin/logging/cronjob-kibana-index-backups/Makefile
-        new file:   admin/logging/cronjob-kibana-index-backups/deployment-cronjob-kibana-backups-all-in-one.yml
-        new file:   admin/logging/cronjob-kibana-index-backups/deployment-cronjob.yml
-        new file:   admin/logging/cronjob-kibana-index-backups/script/kibana_index_backups.sh
 ```
-
-
--- `pull` : is autmatically doing a fetch and a merge
-            a fetch is only showin gthe differences
-
-
 
 
 play with older versions of file test:
@@ -96,3 +80,10 @@ play with older versions of file test:
    git log test
    git checkout b3b2190837587baec91d708d43c780c322455aa4 test
  ``
+
+
+
+$ git remote add origin git@github.com:1robroos/gitbasics.git
+(base) [rob@rob-Latitude-5590 gitbasics (⎈ |rroos@ekstest2.us-west-2.eksctl.io:kubernetes-dashboard)]$ git remote -v
+origin  git@github.com:1robroos/gitbasics.git (fetch)
+origin  git@github.com:1robroos/gitbasics.git (push)
